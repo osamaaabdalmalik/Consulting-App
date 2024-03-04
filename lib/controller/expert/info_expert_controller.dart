@@ -27,7 +27,7 @@ class InfoExpertController extends GetxController{
 
 
   File? image;
-  PickedFile? pickedImage;
+  XFile? pickedImage;
   final picker =ImagePicker();
 
   List<CategoryModel> categories=[];
@@ -106,7 +106,7 @@ class InfoExpertController extends GetxController{
     return workDayIds;
   }
   pickImage()async {
-    pickedImage=await picker.getImage(source: ImageSource.gallery);
+    pickedImage=await picker.pickImage(source: ImageSource.gallery);
     if(pickedImage!=null){
       image=File(pickedImage!.path);
       update();
