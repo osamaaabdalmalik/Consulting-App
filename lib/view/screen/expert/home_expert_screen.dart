@@ -40,8 +40,12 @@ class HomeExpertScreen extends StatelessWidget {
           ),
         ],
       )),
-      body: WillPopScope(
-        onWillPop: alertExitApp,
+      body: PopScope(
+        canPop: controller.canPop,
+        onPopInvoked: (didPop) {
+          controller.canPop = alertExitApp();
+          controller.update();
+        },
         child: GetBuilder<HomeExpertController>(builder: (controller) => ExpertHomeData.expertBottomNavBarPages[controller.selectedBottomNavBarItem],),
       ),
     );

@@ -6,7 +6,7 @@ import 'package:consultancy/core/constant/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-Future<bool> alertExitApp() {
+bool alertExitApp() {
     Get.defaultDialog(
         title: "تنبيه",
         titleStyle: const TextStyle(color: AppColors.primary , fontWeight: FontWeight.bold),
@@ -29,7 +29,7 @@ Future<bool> alertExitApp() {
                 },
                 child:const Text("الغاء",style: TextStyle( fontWeight: FontWeight.bold),))
         ]);
-    return Future.value(true);
+    return true;
 }
 
 Future<String> encodeImage(File image) async{

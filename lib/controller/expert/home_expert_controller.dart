@@ -27,6 +27,7 @@ class HomeExpertController extends GetxController{
   List<UserModel> expertFollows=[];
   int expertId=0,money=0;
   String token='',name='Yasser',phone='096857482',lang='ar';
+  bool canPop = false;
 
   @override
   void onInit() async {

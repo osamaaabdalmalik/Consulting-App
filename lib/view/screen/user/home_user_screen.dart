@@ -16,23 +16,24 @@ class HomeUserScreen extends StatelessWidget {
     return GetBuilder<HomeUserController>(
         builder: (controller) => Scaffold(
               appBar: AppBar(
-                title: controller.showSearchField ?
-                Container(
-                  margin: const EdgeInsets.symmetric(vertical: 10),
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                      labelText: AppTranslationKeys.findCategory.tr,
-                      filled: true,
-                      fillColor: AppColors.whiteSecondary,
-                    ),
-                    controller: controller.showSearchFieldController,
-                    autovalidateMode: AutovalidateMode.onUserInteraction,
-                    onChanged: (value) {
-                      controller.search(value);
-                    },
-                  ),
-                )
-                    : Text(AppTranslationKeys.home.tr,style: const TextStyle(fontSize: 25 ,fontWeight: FontWeight.bold)),
+                title: controller.showSearchField
+                    ? Container(
+                        margin: const EdgeInsets.symmetric(vertical: 10),
+                        child: TextFormField(
+                          decoration: InputDecoration(
+                            labelText: AppTranslationKeys.findCategory.tr,
+                            filled: true,
+                            fillColor: AppColors.whiteSecondary,
+                          ),
+                          controller: controller.showSearchFieldController,
+                          autovalidateMode: AutovalidateMode.onUserInteraction,
+                          onChanged: (value) {
+                            controller.search(value);
+                          },
+                        ),
+                      )
+                    : Text(AppTranslationKeys.home.tr,
+                        style: const TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
                 centerTitle: true,
                 actions: homeUserController.selectedBottomNavigationBarItem != 1
                     ? null
@@ -41,7 +42,7 @@ class HomeUserScreen extends StatelessWidget {
                             onPressed: () {
                               controller.showSearch();
                             },
-                            icon: Icon(controller.showSearchField ? Icons.arrow_forward_rounded:Icons.search))
+                            icon: Icon(controller.showSearchField ? Icons.arrow_forward_rounded : Icons.search))
                       ],
               ),
               drawer: Drawer(
@@ -67,10 +68,13 @@ class HomeUserScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              body: WillPopScope(
-                onWillPop: alertExitApp,
-                child: UserHomeData.userBottomNavBarPages[
-                    controller.selectedBottomNavigationBarItem],
+              body: PopScope(
+                canPop: controller.canPop,
+                onPopInvoked: (didPop) {
+                  controller.canPop = alertExitApp();
+                  controller.update();
+                },
+                child: UserHomeData.userBottomNavBarPages[controller.selectedBottomNavigationBarItem],
               ),
             ));
   }
