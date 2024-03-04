@@ -24,7 +24,7 @@ class ChoseGardeScreen extends StatelessWidget {
                 height: Get.width / 1.3,
                 fit: BoxFit.fill,
               ),
-              Text(AppTranslationKeys.choseTypeAuthentication.tr, style: Theme.of(context).textTheme.displayLarge),
+              Text(AppTranslationKeys.choseTypeAuthentication.tr, style: Theme.of(context).textTheme.displayMedium),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [

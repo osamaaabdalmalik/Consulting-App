@@ -26,7 +26,7 @@ class RegisterScreen extends StatelessWidget {
         title: Text(AppTranslationKeys.register.tr,
             style: Theme.of(context)
                 .textTheme
-                .displayLarge!
+                .displayMedium!
                 .copyWith(color: AppColors.grey)),
       ),
       body: GetBuilder<RegisterController>(
