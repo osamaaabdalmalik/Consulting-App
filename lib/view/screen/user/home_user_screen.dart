@@ -69,10 +69,9 @@ class HomeUserScreen extends StatelessWidget {
                 ],
               ),
               body: PopScope(
-                canPop: controller.canPop,
-                onPopInvoked: (didPop) {
-                  controller.canPop = alertExitApp();
-                  controller.update();
+                canPop: false,
+                onPopInvoked: (didPop) async {
+                  await alertExitApp();
                 },
                 child: UserHomeData.userBottomNavBarPages[controller.selectedBottomNavigationBarItem],
               ),

@@ -27,7 +27,6 @@ class HomeUserController extends GetxController {
   UserInfo userInfo = UserInfo();
   String token = '', name = 'osama', phoneNumber = '0999558423', photo = '', lang = 'ar';
   int userId = 0, money = 0;
-  bool canPop = false;
 
   List<String> names = [];
   List<int> ids = [];
