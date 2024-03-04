@@ -26,7 +26,7 @@ class LoginScreen extends StatelessWidget {
         title: Text(AppTranslationKeys.login.tr,
             style: Theme.of(context)
                 .textTheme
-                .headline1!
+                .displayLarge!
                 .copyWith(color: AppColors.grey)),
       ),
       body: GetBuilder<LoginController>(
