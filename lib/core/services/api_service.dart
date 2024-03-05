@@ -21,7 +21,7 @@ class ApiService {
 
   Future<Either<StatusView, Map>> post(String url, Map<String, dynamic> data, {Map<String, String> headers = const {}}) async {
     try {
-      var response = await http.post(Uri.http(AppApiRoute.server, url), body: data, headers: headers);
+      var response = await http.post(Uri.https(AppApiRoute.server, url), body: data, headers: headers);
       if (response.statusCode == StatusCodeRequest.ok ||
           response.statusCode == StatusCodeRequest.badRequest || response.statusCode == StatusCodeRequest.unauthorised) {
         return Right(jsonDecode(response.body));
@@ -67,7 +67,7 @@ class ApiService {
   }
   Future<Either<StatusView, Map>> get(String url, Map<String, String> headers) async {
     try {
-      var response = await http.get(Uri.http(AppApiRoute.server, url), headers: headers);
+      var response = await http.get(Uri.https(AppApiRoute.server, url), headers: headers);
       if (response.statusCode == StatusCodeRequest.ok || response.statusCode == StatusCodeRequest.badRequest) {
         return Right(jsonDecode(response.body));
       } else if (response.statusCode == StatusCodeRequest.invalidToken) {
@@ -112,7 +112,7 @@ class ApiService {
   }
   Future<Either<StatusView, Map>> postMultiPart(String url, Map<String, String> data, Map<String, String> headers, File file) async {
     try {
-      var request = http.MultipartRequest("POST", Uri.http(AppApiRoute.server, url));
+      var request = http.MultipartRequest("POST", Uri.https(AppApiRoute.server, url));
       request.fields.addAll(data);
       request.files.add(await http.MultipartFile.fromPath('photo', file.path, filename: file.path.split('/').last,),);
       request.headers.addAll(headers);

@@ -1,8 +1,7 @@
 
 class AppApiRoute {
 
-  // static const String server = "10.0.2.2:8000";
-  static const String server = "192.168.6.114:8000";
+  static const String server = "consulting-backend.microtechdev.com";
 
   // Auth
   static const String registerUser = "/user/register";
