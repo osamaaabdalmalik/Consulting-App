@@ -25,14 +25,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.11.0"
-  awesome_dialog:
-    dependency: "direct main"
-    description:
-      name: awesome_dialog
-      sha256: ac08268b991f228fc6b8880b68ec030d2941bcc8df8b6a6551fb79f2bd36b7da
-      url: "https://pub.dev"
-    source: hosted
-    version: "3.0.2"
   boolean_selector:
     dependency: transitive
     description:
@@ -240,22 +232,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  fluttericon:
-    dependency: "direct main"
-    description:
-      name: fluttericon
-      sha256: "252fa8043826e93d972a602497a260cb3d62b5aea6d045793e4381590f2c1e99"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.0.0"
-  font_awesome_flutter:
-    dependency: "direct main"
-    description:
-      name: font_awesome_flutter
-      sha256: "959ef4add147753f990b4a7c6cccb746d5792dbdc81b1cde99e62e7edb31b206"
-      url: "https://pub.dev"
-    source: hosted
-    version: "10.4.0"
   get:
     dependency: "direct main"
     description:
@@ -264,14 +240,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.6.5"
-  graphs:
-    dependency: transitive
-    description:
-      name: graphs
-      sha256: "772db3d53d23361d4ffcf5a9bb091cf3ee9b22f2be52cd107cd7a2683a89ba0e"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.3.0"
   html:
     dependency: transitive
     description:
@@ -512,14 +480,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.2.4"
-  rive:
-    dependency: transitive
-    description:
-      name: rive
-      sha256: "22e3755b75f4ea4492d2fecf4fc2acf1c8d0073df39781d290a20cbfe74c3760"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.9.1"
   rxdart:
     dependency: transitive
     description:
@@ -598,7 +558,7 @@ packages:
     source: hosted
     version: "1.10.0"
   sqflite:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: sqflite
       sha256: b4d6710e1200e96845747e37338ea8a819a12b51689a3bcf31eff0003b37a0b9
