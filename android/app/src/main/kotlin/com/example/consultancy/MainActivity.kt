@@ -1,4 +1,4 @@
-package com.example.consultancy
+package com.osamaaabdalmalik.consultancy
 
 import io.flutter.embedding.android.FlutterActivity
 
